@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <title>[META_TITLE_CONTACT: INSERT SEO TITLE FOR CONTACT PAGE]</title>
+  <meta name="description" content="[META_DESCRIPTION_CONTACT: INSERT 150-160 CHAR META DESCRIPTION]" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[OG_TITLE_CONTACT]" />
+  <meta property="og:description" content="[OG_DESCRIPTION_CONTACT]" />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+  <meta property="og:url" content="[CANONICAL_URL_CONTACT_PLACEHOLDER]" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="[CANONICAL_URL_CONTACT_PLACEHOLDER]" />
+  <link rel="icon" type="image/png" href="Assets/FunneFountainMonogram%20Transparent.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" />
+
+  <style>
+    html,body{margin:0;background:#0a0a0a;color:#f5f5f5;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    body{overflow-x:hidden;min-height:100vh}
+  </style>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="contact" data-depth="0">
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Get in touch</span>
+        <h1>[CONTACT_PAGE_HEADLINE: INSERT HEADLINE — E.G. LET'S BUILD SOMETHING THAT GROWS]</h1>
+        <p>[CONTACT_PAGE_SUB: INSERT 1-2 SENTENCE SUBHEADLINE — E.G. TELL US ABOUT YOUR BUSINESS AND WE'LL REPLY WITHIN ONE BUSINESS DAY]</p>
+      </div>
+    </section>
+
+    <!-- CONTACT GRID -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- LEFT — info -->
+          <aside class="contact-info reveal">
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Email</div>
+                <div class="contact-info__value">
+                  <a href="mailto:[CONTACT_EMAIL_PLACEHOLDER]">[CONTACT_EMAIL_PLACEHOLDER]</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Phone</div>
+                <div class="contact-info__value">
+                  <a href="tel:[CONTACT_PHONE_PLACEHOLDER]">[CONTACT_PHONE_PLACEHOLDER]</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Location</div>
+                <div class="contact-info__value">[CONTACT_ADDRESS_PLACEHOLDER]</div>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="contact-info__label">Hours</div>
+                <div class="contact-info__value">[CONTACT_HOURS_PLACEHOLDER]</div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- RIGHT — form -->
+          <div class="glass reveal">
+            <h3 style="margin-bottom:8px;">Send us a message</h3>
+            <p style="margin-bottom:24px;font-size:0.95rem;">[CONTACT_FORM_INTRO: INSERT 1-LINE INTRO — E.G. FILL OUT THE FORM AND WE'LL BE IN TOUCH WITHIN ONE BUSINESS DAY]</p>
+
+            <form
+              class="contact-form"
+              action="[FORMSPREE_ENDPOINT_PLACEHOLDER]"
+              method="POST"
+              novalidate
+            >
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567" />
+                </div>
+                <div class="form-field">
+                  <label for="company">Company</label>
+                  <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company name" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="service">Service Interest</label>
+                  <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="google-ads">Google Ads</option>
+                    <option value="meta-ads">Meta Ads</option>
+                    <option value="social-media">Social Media Management</option>
+                    <option value="ai-automation">AI Automation</option>
+                    <option value="multiple">Multiple services</option>
+                    <option value="other">Other / not sure</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="budget">Budget Range</label>
+                  <select id="budget" name="budget" required>
+                    <option value="" disabled selected>Select a range</option>
+                    <option value="under-2k">Under $2,000 / mo</option>
+                    <option value="2k-5k">$2,000 – $5,000 / mo</option>
+                    <option value="5k-10k">$5,000 – $10,000 / mo</option>
+                    <option value="10k-25k">$10,000 – $25,000 / mo</option>
+                    <option value="25k-plus">$25,000+ / mo</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about your business and what you're trying to achieve..." required></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn--gold btn--lg">Send Message</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Booking calendar embed -->
+        <div class="booking-embed reveal" id="book">
+          <div id="booking-calendar">
+            <h3>[BOOKING_HEADLINE: INSERT HEADLINE — E.G. PREFER TO BOOK A TIME DIRECTLY?]</h3>
+            <p>[BOOKING_SUB: INSERT 1-LINE INTRO — E.G. PICK A SLOT THAT WORKS AND WE'LL CONFIRM IMMEDIATELY]</p>
+            <!-- INSERT CALENDLY OR CAL.COM EMBED HERE -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

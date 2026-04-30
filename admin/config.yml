@@ -1,0 +1,182 @@
+# =========================================================
+# Decap CMS configuration — FunnelFountain
+# Docs: https://decapcms.org/docs/
+# =========================================================
+
+backend:
+  name: git-gateway
+  repo: hassaanngr/FunnelFountain-Website
+  branch: main
+
+# Where uploaded media (images) are stored in the repo,
+# and how they are referenced from the served site.
+media_folder: "Assets/uploads"
+public_folder: "/Assets/uploads"
+
+# Editable workflow gives you a draft → review → publish flow.
+# Comment out if you want changes to commit immediately.
+publish_mode: editorial_workflow
+
+# Default site URL (used by the "View live" link on entries).
+site_url: https://funnelfountain.com
+display_url: https://funnelfountain.com
+logo_url: /Assets/FunnelFountain%20White%20Text%20Logo%20Transparent.png
+
+# =========================================================
+# Collections — each maps to one JSON file in /content/
+# =========================================================
+collections:
+
+  # ---------- Homepage ----------
+  - name: "homepage"
+    label: "Homepage"
+    icon: "home"
+    files:
+      - file: "content/homepage.json"
+        label: "Homepage"
+        name: "homepage"
+        format: "json"
+        fields:
+          - { label: "Hero — eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero — headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero — subheadline", name: "hero_subheadline", widget: "text" }
+
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            min: 3
+            max: 3
+            fields:
+              - { label: "Number", name: "number", widget: "string", hint: "e.g. 200, 94, 2" }
+              - { label: "Prefix", name: "prefix", widget: "string", required: false, hint: "e.g. $" }
+              - { label: "Suffix", name: "suffix", widget: "string", required: false, hint: "e.g. +, %, M+" }
+              - { label: "Label", name: "label", widget: "string" }
+
+          - { label: "Why-choose-us — headline", name: "why_headline", widget: "string" }
+          - { label: "Why-choose-us — intro", name: "why_intro", widget: "text" }
+          - label: "Why-choose-us — items"
+            name: "why_items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role & company", name: "role", widget: "string" }
+
+          - { label: "CTA banner — headline", name: "cta_headline", widget: "string" }
+          - { label: "CTA banner — subheadline", name: "cta_subheadline", widget: "text" }
+
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Meta title", name: "meta_title", widget: "string" }
+              - { label: "Meta description", name: "meta_description", widget: "text" }
+              - { label: "OG title", name: "og_title", widget: "string", required: false }
+              - { label: "OG description", name: "og_description", widget: "text", required: false }
+
+  # ---------- Services ----------
+  - name: "services"
+    label: "Services"
+    icon: "list"
+    files:
+      - file: "content/services.json"
+        label: "Services"
+        name: "services"
+        format: "json"
+        fields:
+          - { label: "Page headline", name: "page_headline", widget: "string" }
+          - { label: "Page subheadline", name: "page_subheadline", widget: "text" }
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string", hint: "URL filename without .html" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string", required: false }
+              - { label: "Short blurb (homepage card)", name: "blurb", widget: "text" }
+              - { label: "Full description", name: "description", widget: "text" }
+              - label: "Benefits"
+                name: "benefits"
+                widget: "list"
+                field: { label: "Benefit", name: "item", widget: "string" }
+              - label: "FAQs"
+                name: "faqs"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer", name: "answer", widget: "text" }
+
+  # ---------- About ----------
+  - name: "about"
+    label: "About"
+    icon: "user"
+    files:
+      - file: "content/about.json"
+        label: "About"
+        name: "about"
+        format: "json"
+        fields:
+          - { label: "Page headline", name: "page_headline", widget: "string" }
+          - { label: "Page subheadline", name: "page_subheadline", widget: "text" }
+          - { label: "Mission statement", name: "mission", widget: "text" }
+          - label: "Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Team"
+            name: "team"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title / role", name: "title", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  # ---------- Contact ----------
+  - name: "contact"
+    label: "Contact"
+    icon: "mail"
+    files:
+      - file: "content/contact.json"
+        label: "Contact"
+        name: "contact"
+        format: "json"
+        fields:
+          - { label: "Page headline", name: "page_headline", widget: "string" }
+          - { label: "Page subheadline", name: "page_subheadline", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Office hours", name: "hours", widget: "string", required: false }
+          - { label: "Formspree endpoint", name: "form_endpoint", widget: "string", required: false, hint: "Full URL the form posts to" }
+          - { label: "Booking calendar embed (HTML)", name: "booking_embed", widget: "text", required: false, hint: "Calendly or Cal.com embed code" }
+
+  # ---------- Global / site-wide ----------
+  - name: "global"
+    label: "Global"
+    icon: "settings"
+    files:
+      - file: "content/global.json"
+        label: "Global settings"
+        name: "global"
+        format: "json"
+        fields:
+          - { label: "Site tagline", name: "tagline", widget: "string", hint: "Used in the footer brand block" }
+          - { label: "Footer copyright note", name: "copyright_note", widget: "string" }
+          - label: "Social URLs"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "X (Twitter)", name: "x", widget: "string", required: false }
