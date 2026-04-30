@@ -1,0 +1,115 @@
+{
+  "page_headline": "[SERVICES_PAGE_HEADLINE: INSERT MAIN HEADLINE FOR SERVICES OVERVIEW PAGE]",
+  "page_subheadline": "[SERVICES_PAGE_SUB: INSERT 1-2 SENTENCE INTRO EXPLAINING THE SCOPE OF SERVICES OFFERED]",
+
+  "services": [
+    {
+      "slug": "google-ads",
+      "title": "Google Ads",
+      "eyebrow": "Performance marketing",
+      "blurb": "[SERVICE_GOOGLE_ADS_BLURB: INSERT ONE-LINE BENEFIT STATEMENT FOR GOOGLE ADS]",
+      "description": "[GOOGLE_ADS_DESCRIPTION: INSERT 2-3 SENTENCE DESCRIPTION OF YOUR GOOGLE ADS SERVICE — WHAT'S INCLUDED, WHO IT'S FOR]",
+      "benefits": [
+        "[GOOGLE_ADS_BENEFIT_1: INSERT KEY BENEFIT — E.G. SEARCH CAMPAIGN BUILD-OUTS THAT TARGET HIGH-INTENT KEYWORDS]",
+        "[GOOGLE_ADS_BENEFIT_2: INSERT KEY BENEFIT — E.G. PERFORMANCE MAX & SHOPPING SETUP FOR ECOMMERCE]",
+        "[GOOGLE_ADS_BENEFIT_3: INSERT KEY BENEFIT — E.G. WEEKLY OPTIMIZATION AND TRANSPARENT REPORTING]",
+        "[GOOGLE_ADS_BENEFIT_4: INSERT KEY BENEFIT — E.G. CONVERSION TRACKING AND SERVER-SIDE TAGGING]"
+      ],
+      "faqs": [
+        {
+          "question": "[FAQ_GOOGLE_Q1: INSERT QUESTION ABOUT GOOGLE ADS]",
+          "answer": "[FAQ_GOOGLE_A1: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_GOOGLE_Q2: INSERT QUESTION ABOUT GOOGLE ADS]",
+          "answer": "[FAQ_GOOGLE_A2: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_GOOGLE_Q3: INSERT QUESTION ABOUT GOOGLE ADS]",
+          "answer": "[FAQ_GOOGLE_A3: INSERT ANSWER — 2-4 SENTENCES]"
+        }
+      ]
+    },
+    {
+      "slug": "meta-ads",
+      "title": "Meta Ads",
+      "eyebrow": "Paid social",
+      "blurb": "[SERVICE_META_ADS_BLURB: INSERT ONE-LINE BENEFIT STATEMENT FOR META ADS]",
+      "description": "[META_ADS_DESCRIPTION: INSERT 2-3 SENTENCE DESCRIPTION OF YOUR META ADS SERVICE]",
+      "benefits": [
+        "[META_ADS_BENEFIT_1: INSERT BENEFIT — E.G. FACEBOOK & INSTAGRAM CAMPAIGN STRATEGY AND BUILD]",
+        "[META_ADS_BENEFIT_2: INSERT BENEFIT — E.G. CREATIVE TESTING FRAMEWORK FOR SCALING WINNERS]",
+        "[META_ADS_BENEFIT_3: INSERT BENEFIT — E.G. AUDIENCE RESEARCH AND LOOK-ALIKE BUILDING]",
+        "[META_ADS_BENEFIT_4: INSERT BENEFIT — E.G. PIXEL & CAPI SETUP FOR ACCURATE ATTRIBUTION]"
+      ],
+      "faqs": [
+        {
+          "question": "[FAQ_META_Q1: INSERT QUESTION ABOUT META ADS]",
+          "answer": "[FAQ_META_A1: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_META_Q2: INSERT QUESTION ABOUT META ADS]",
+          "answer": "[FAQ_META_A2: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_META_Q3: INSERT QUESTION ABOUT META ADS]",
+          "answer": "[FAQ_META_A3: INSERT ANSWER — 2-4 SENTENCES]"
+        }
+      ]
+    },
+    {
+      "slug": "social-media",
+      "title": "Social Media Management",
+      "eyebrow": "Organic growth",
+      "blurb": "[SERVICE_SOCIAL_BLURB: INSERT ONE-LINE BENEFIT STATEMENT FOR SOCIAL MEDIA MANAGEMENT]",
+      "description": "[SOCIAL_DESCRIPTION: INSERT 2-3 SENTENCE DESCRIPTION OF YOUR SOCIAL MEDIA MANAGEMENT SERVICE]",
+      "benefits": [
+        "[SOCIAL_BENEFIT_1: INSERT BENEFIT — E.G. CONTENT STRATEGY AND MONTHLY EDITORIAL CALENDARS]",
+        "[SOCIAL_BENEFIT_2: INSERT BENEFIT — E.G. SHORT-FORM VIDEO PRODUCTION AND POSTING]",
+        "[SOCIAL_BENEFIT_3: INSERT BENEFIT — E.G. COMMUNITY MANAGEMENT AND DM RESPONSES]",
+        "[SOCIAL_BENEFIT_4: INSERT BENEFIT — E.G. ANALYTICS REPORTS AND GROWTH BENCHMARKING]"
+      ],
+      "faqs": [
+        {
+          "question": "[FAQ_SOCIAL_Q1: INSERT QUESTION ABOUT SOCIAL MEDIA]",
+          "answer": "[FAQ_SOCIAL_A1: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_SOCIAL_Q2: INSERT QUESTION ABOUT SOCIAL MEDIA]",
+          "answer": "[FAQ_SOCIAL_A2: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_SOCIAL_Q3: INSERT QUESTION ABOUT SOCIAL MEDIA]",
+          "answer": "[FAQ_SOCIAL_A3: INSERT ANSWER — 2-4 SENTENCES]"
+        }
+      ]
+    },
+    {
+      "slug": "ai-automation",
+      "title": "AI Automation",
+      "eyebrow": "Process automation",
+      "blurb": "[SERVICE_AI_BLURB: INSERT ONE-LINE BENEFIT STATEMENT FOR AI AUTOMATION]",
+      "description": "[AI_DESCRIPTION: INSERT 2-3 SENTENCE DESCRIPTION OF YOUR AI AUTOMATION SERVICE]",
+      "benefits": [
+        "[AI_BENEFIT_1: INSERT BENEFIT — E.G. CUSTOM CHATBOTS FOR LEAD QUALIFICATION AND SUPPORT]",
+        "[AI_BENEFIT_2: INSERT BENEFIT — E.G. WORKFLOW AUTOMATION USING ZAPIER, MAKE, OR N8N]",
+        "[AI_BENEFIT_3: INSERT BENEFIT — E.G. CONTENT GENERATION PIPELINES TO 10X YOUR OUTPUT]",
+        "[AI_BENEFIT_4: INSERT BENEFIT — E.G. CRM AND PIPELINE AUTOMATION WITH AI ENRICHMENT]"
+      ],
+      "faqs": [
+        {
+          "question": "[FAQ_AI_Q1: INSERT QUESTION ABOUT AI AUTOMATION]",
+          "answer": "[FAQ_AI_A1: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_AI_Q2: INSERT QUESTION ABOUT AI AUTOMATION]",
+          "answer": "[FAQ_AI_A2: INSERT ANSWER — 2-4 SENTENCES]"
+        },
+        {
+          "question": "[FAQ_AI_Q3: INSERT QUESTION ABOUT AI AUTOMATION]",
+          "answer": "[FAQ_AI_A3: INSERT ANSWER — 2-4 SENTENCES]"
+        }
+      ]
+    }
+  ]
+}

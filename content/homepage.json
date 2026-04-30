@@ -1,0 +1,71 @@
+{
+  "hero_eyebrow": "[HERO_EYEBROW: INSERT SHORT TAG — E.G. PERFORMANCE MARKETING AGENCY]",
+  "hero_headline": "[HERO_HEADLINE: INSERT BIG SEO-OPTIMIZED HEADLINE HERE — 6-12 WORDS]",
+  "hero_subheadline": "[HERO_SUBHEADLINE: INSERT VALUE PROPOSITION — 1-2 SENTENCES EXPLAINING WHO YOU HELP AND HOW]",
+
+  "stats": [
+    {
+      "number": "200",
+      "prefix": "",
+      "suffix": "+",
+      "label": "[STAT_1_LABEL: CAMPAIGNS LAUNCHED]"
+    },
+    {
+      "number": "94",
+      "prefix": "",
+      "suffix": "%",
+      "label": "[STAT_2_LABEL: CLIENT RETENTION]"
+    },
+    {
+      "number": "2",
+      "prefix": "$",
+      "suffix": "M+",
+      "label": "[STAT_3_LABEL: AD SPEND MANAGED]"
+    }
+  ],
+
+  "why_headline": "[WHY_HEADLINE: INSERT HEADLINE — E.G. WHAT MAKES US DIFFERENT]",
+  "why_intro": "[WHY_INTRO: INSERT 1-2 SENTENCE SUPPORTING COPY]",
+  "why_items": [
+    {
+      "title": "[WHY_1_TITLE: INSERT VALUE PROP HEADLINE]",
+      "body": "[WHY_1_BODY: INSERT 2-3 LINE EXPLANATION OF THIS DIFFERENTIATOR]"
+    },
+    {
+      "title": "[WHY_2_TITLE: INSERT VALUE PROP HEADLINE]",
+      "body": "[WHY_2_BODY: INSERT 2-3 LINE EXPLANATION OF THIS DIFFERENTIATOR]"
+    },
+    {
+      "title": "[WHY_3_TITLE: INSERT VALUE PROP HEADLINE]",
+      "body": "[WHY_3_BODY: INSERT 2-3 LINE EXPLANATION OF THIS DIFFERENTIATOR]"
+    }
+  ],
+
+  "testimonials": [
+    {
+      "quote": "[TESTIMONIAL_1_QUOTE: INSERT CLIENT QUOTE — 2-3 SENTENCES ABOUT RESULTS OR EXPERIENCE]",
+      "name": "[TESTIMONIAL_1_NAME]",
+      "role": "[TESTIMONIAL_1_ROLE_AND_COMPANY]"
+    },
+    {
+      "quote": "[TESTIMONIAL_2_QUOTE: INSERT CLIENT QUOTE — 2-3 SENTENCES ABOUT RESULTS OR EXPERIENCE]",
+      "name": "[TESTIMONIAL_2_NAME]",
+      "role": "[TESTIMONIAL_2_ROLE_AND_COMPANY]"
+    },
+    {
+      "quote": "[TESTIMONIAL_3_QUOTE: INSERT CLIENT QUOTE — 2-3 SENTENCES ABOUT RESULTS OR EXPERIENCE]",
+      "name": "[TESTIMONIAL_3_NAME]",
+      "role": "[TESTIMONIAL_3_ROLE_AND_COMPANY]"
+    }
+  ],
+
+  "cta_headline": "[CTA_BANNER_HEADLINE: INSERT POWERFUL CTA HEADLINE — E.G. LET'S BUILD YOUR GROWTH ENGINE]",
+  "cta_subheadline": "[CTA_BANNER_SUB: INSERT 1-2 SENTENCE SUPPORTING COPY THAT REINFORCES THE VALUE OF BOOKING A CALL]",
+
+  "seo": {
+    "meta_title": "[META_TITLE: INSERT SEO PAGE TITLE — INCLUDE PRIMARY KEYWORD + BRAND]",
+    "meta_description": "[META_DESCRIPTION: INSERT 150-160 CHAR SEO META DESCRIPTION HERE]",
+    "og_title": "[OG_TITLE: INSERT OPEN GRAPH TITLE]",
+    "og_description": "[OG_DESCRIPTION: INSERT OG DESCRIPTION]"
+  }
+}

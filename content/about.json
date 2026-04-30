@@ -1,0 +1,46 @@
+{
+  "page_headline": "[ABOUT_PAGE_HEADLINE: INSERT MAIN HEADLINE — E.G. WE BUILD GROWTH SYSTEMS FOR AMBITIOUS BUSINESSES]",
+  "page_subheadline": "[ABOUT_PAGE_SUB: INSERT 1-2 SENTENCE SUBHEADLINE EXPLAINING WHO YOU ARE AND WHO YOU SERVE]",
+
+  "mission": "[ABOUT_MISSION: INSERT MISSION STATEMENT — 2-3 SENTENCES THAT CAPTURE WHY YOU EXIST AND WHAT YOU BELIEVE]",
+
+  "values": [
+    {
+      "title": "[VALUE_1_TITLE: INSERT VALUE NAME]",
+      "description": "[VALUE_1_DESC: INSERT 1-2 SENTENCE EXPLANATION]"
+    },
+    {
+      "title": "[VALUE_2_TITLE: INSERT VALUE NAME]",
+      "description": "[VALUE_2_DESC: INSERT 1-2 SENTENCE EXPLANATION]"
+    },
+    {
+      "title": "[VALUE_3_TITLE: INSERT VALUE NAME]",
+      "description": "[VALUE_3_DESC: INSERT 1-2 SENTENCE EXPLANATION]"
+    },
+    {
+      "title": "[VALUE_4_TITLE: INSERT VALUE NAME]",
+      "description": "[VALUE_4_DESC: INSERT 1-2 SENTENCE EXPLANATION]"
+    }
+  ],
+
+  "team": [
+    {
+      "name": "[TEAM_1_NAME: INSERT FULL NAME]",
+      "title": "[TEAM_1_TITLE: INSERT ROLE]",
+      "bio": "[TEAM_1_BIO: INSERT 1-2 SENTENCE BIO]",
+      "photo": ""
+    },
+    {
+      "name": "[TEAM_2_NAME: INSERT FULL NAME]",
+      "title": "[TEAM_2_TITLE: INSERT ROLE]",
+      "bio": "[TEAM_2_BIO: INSERT 1-2 SENTENCE BIO]",
+      "photo": ""
+    },
+    {
+      "name": "[TEAM_3_NAME: INSERT FULL NAME]",
+      "title": "[TEAM_3_TITLE: INSERT ROLE]",
+      "bio": "[TEAM_3_BIO: INSERT 1-2 SENTENCE BIO]",
+      "photo": ""
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "tagline": "[FOOTER_TAGLINE: INSERT BRAND TAGLINE — ONE SHORT SENTENCE DESCRIBING WHAT YOU DO]",
+  "copyright_note": "[FOOTER_COPYRIGHT_NOTE: ALL RIGHTS RESERVED]",
+
+  "social": {
+    "instagram": "[SOCIAL_INSTAGRAM_URL]",
+    "facebook": "[SOCIAL_FACEBOOK_URL]",
+    "linkedin": "[SOCIAL_LINKEDIN_URL]",
+    "x": "[SOCIAL_X_URL]"
+  }
+}
