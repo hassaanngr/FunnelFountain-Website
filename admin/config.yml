@@ -7,6 +7,8 @@ backend:
   name: github
   repo: hassaanngr/FunnelFountain-Website
   branch: main
+  base_url: https://funnelfountain.com
+  auth_endpoint: auth/callback
 
 # Where uploaded media (images) are stored in the repo,
 # and how they are referenced from the served site.
@@ -20,7 +22,7 @@ public_folder: "/Assets/uploads"
 # Default site URL (used by the "View live" link on entries).
 site_url: https://funnelfountain.com
 display_url: https://funnelfountain.com
-logo_url: /Assets/FunnelFountain Logo Transparent.png
+logo_url: /Assets/FunnelFountain White Text Logo Transparent.png
 
 # =========================================================
 # Collections — each maps to one JSON file in /content/
