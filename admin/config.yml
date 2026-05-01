@@ -19,7 +19,7 @@ publish_mode: editorial_workflow
 # Default site URL (used by the "View live" link on entries).
 site_url: https://funnelfountain.com
 display_url: https://funnelfountain.com
-logo_url: /Assets/FunnelFountain%20White%20Text%20Logo%20Transparent.png
+logo_url: /Assets/FunnelFountain Logo Transparent.png
 
 # =========================================================
 # Collections — each maps to one JSON file in /content/
