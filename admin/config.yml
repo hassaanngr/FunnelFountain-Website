@@ -4,7 +4,8 @@
 # =========================================================
 
 backend:
-  name: git-gateway
+  name: github
+  repo: hassaanngr/FunnelFountain-Website
   branch: main
 
 # Where uploaded media (images) are stored in the repo,
