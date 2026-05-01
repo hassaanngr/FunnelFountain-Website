@@ -14,7 +14,7 @@ public_folder: "/Assets/uploads"
 
 # Editable workflow gives you a draft → review → publish flow.
 # Comment out if you want changes to commit immediately.
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 # Default site URL (used by the "View live" link on entries).
 site_url: https://funnelfountain.com
