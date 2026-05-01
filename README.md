@@ -1,6 +1,6 @@
 # FunnelFountain Website
 
-Static, no-build agency website. Vanilla HTML + CSS + JS, deployable on Cloudflare Pages, with content editable via Decap CMS.
+Static, no-build agency website. Vanilla HTML + CSS + JS, deployed on Cloudflare Pages, with content editable via Sveltia CMS authenticated through a built-in Cloudflare Pages Function (GitHub OAuth).
 
 ---
 
@@ -12,7 +12,8 @@ Static, no-build agency website. Vanilla HTML + CSS + JS, deployable on Cloudfla
 | Styling  | A single `style.css` driven by CSS custom properties (design tokens)  |
 | Scripts  | One `main.js` — injects header/footer, handles scroll & animations    |
 | Fonts    | Google Fonts: **Inter** (body) + **Syne** (display)                   |
-| CMS      | [Decap CMS](https://decapcms.org) via `git-gateway`                   |
+| CMS      | [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (Decap-compatible config) |
+| Auth     | GitHub OAuth via a Cloudflare Pages Function (`/auth/callback`)       |
 | Hosting  | Cloudflare Pages, auto-deployed from GitHub                           |
 | Build    | None. Files are served as-is.                                         |
 
@@ -32,20 +33,23 @@ FunnelFountain Website/
 ├── contact.html            Contact + booking page
 ├── style.css               Single global stylesheet (design tokens + components)
 ├── main.js                 Single global script (header/footer/animations)
+├── robots.txt              SEO crawler directives
+├── sitemap.xml             SEO sitemap
 ├── admin/
-│   ├── index.html          Decap CMS admin panel entry point
-│   └── config.yml          Decap CMS configuration
-├── content/                JSON content files Decap reads/writes
+│   ├── index.html          Sveltia CMS admin panel entry point
+│   └── config.yml          CMS configuration (collections, backend)
+├── content/                JSON content files the CMS reads/writes
 │   ├── homepage.json
 │   ├── services.json
 │   ├── about.json
 │   ├── contact.json
 │   └── global.json
+├── functions/
+│   └── auth/
+│       └── [[callback]].js GitHub OAuth handler (Cloudflare Pages Function)
 ├── Assets/                 Logo files & brand images
 ├── icons/                  (reserved for additional icons)
 ├── images/                 (reserved for additional photography)
-├── robots.txt              SEO crawler directives (Phase 4)
-├── sitemap.xml             SEO sitemap (Phase 4)
 ├── CONTEXT.md              Project brief
 └── README.md               You are here
 ```
@@ -79,14 +83,14 @@ Every editable string in the HTML is wrapped in a clearly marked all-caps placeh
 <h1>[HERO_HEADLINE: INSERT BIG SEO-OPTIMIZED HEADLINE HERE — 6-12 WORDS]</h1>
 ```
 
-Just open the file, ctrl+F the placeholder name, and replace it with real copy. Same pattern for SVG `aria-label`s, social URLs, the Formspree endpoint, etc.
+Open the file, ctrl+F the placeholder name, and replace it with real copy. Same pattern for SVG `aria-label`s, social URLs, the Formspree endpoint, etc.
 
 **To find every placeholder still in the codebase:**
 search for the regex `\[[A-Z_]+:`
 
-### 4b. Decap CMS panel (best for non-technical edits)
+### 4b. Sveltia CMS panel (best for non-technical edits)
 
-Once the site is on Cloudflare Pages with Netlify Identity / git-gateway configured (see §6), visit `/admin/` to log in and edit fields through a friendly UI. Decap commits changes to the GitHub repo, which auto-deploys.
+Once the site is live on Cloudflare Pages with the GitHub OAuth function configured (see §9), visit `https://funnelfountain.com/admin/` and click **Login with GitHub**. The CMS authenticates through the Cloudflare Pages Function, then reads/writes files directly from the GitHub repo. Commits trigger an auto-deploy.
 
 The CMS edits the JSON files in `/content/`. **Note:** these JSON files are not yet wired into the HTML. They are the canonical source of truth that the CMS reads and writes; until you hook them up (see §4c), changes there don't affect the rendered site automatically.
 
@@ -103,7 +107,7 @@ fetch(asset('content/homepage.json'))
   });
 ```
 
-Then mark each placeholder element with `data-bind="hero.headline"` instead of (or in addition to) the bracketed text. This is a pure-JS approach with no build step. Until you do this, treat the JSON files as a structured place to draft copy that you then paste into HTML.
+Then mark each placeholder element with `data-bind="hero.headline"` instead of (or in addition to) the bracketed text. Pure JS, no build step. Until you do this, treat the JSON files as a structured place to draft copy that you then paste into HTML.
 
 ---
 
@@ -159,6 +163,7 @@ This array drives the **header dropdown**, the **mobile drawer sub-list**, and t
 2. Add a matching SVG to the `ICONS` object above the array, then reference it via the `icon` key.
 3. Duplicate one of the existing `*.html` service files, rename it `<slug>.html`, swap the placeholders.
 4. Optionally add a corresponding section to `services.html`.
+5. Add a `<url>` entry for the new page in `sitemap.xml`.
 
 ---
 
@@ -169,6 +174,7 @@ This array drives the **header dropdown**, the **mobile drawer sub-list**, and t
 3. Set `<body data-page="something" data-depth="0">`.
 4. Replace the page content. Use the existing components (`.page-hero`, `.section`, `.glass`, `.cta-banner`) — they're already styled.
 5. If you want it in the main nav, edit the `buildHeader` and `buildFooter` functions in `main.js` to add the link.
+6. Add a `<url>` entry in `sitemap.xml`.
 
 ---
 
@@ -192,14 +198,48 @@ These class patterns are already styled and animation-ready. Drop them into any 
 
 ---
 
-## 9. Deploying
+## 9. Deploying & connecting CMS auth
 
-1. Push this directory to a GitHub repo (this README assumes `hassaanngr/FunnelFountain-Website`).
-2. In Cloudflare Pages, create a new project from that repo. Build command: *(leave empty)*. Output directory: *(leave empty / `/`)*.
-3. To enable Decap CMS, you'll need an authentication backend. The standard options:
-   - **Netlify Identity + git-gateway** — even when hosting on Cloudflare, you can register an external Netlify "site" that points at the same repo just to provide auth.
-   - **OAuth** — set up a GitHub OAuth app and point Decap at it (see Decap's docs).
-4. After auth is configured, edit `admin/config.yml` if your branch isn't `main`, then visit `https://your-domain.com/admin/` to log in.
+### 9a. Cloudflare Pages
+
+1. Push this directory to GitHub (`hassaanngr/FunnelFountain-Website`).
+2. In Cloudflare Pages → **Create project → Connect to Git**, pick the repo.
+3. Build settings: **Framework preset:** None. **Build command:** (leave empty). **Build output directory:** `/`.
+4. Deploy. Cloudflare auto-detects `functions/` and registers `/auth/callback` as a Pages Function.
+5. Add your custom domain (`funnelfountain.com`) in **Pages → Custom domains**.
+
+### 9b. GitHub OAuth App
+
+1. Go to https://github.com/settings/developers → **New OAuth App**.
+2. **Homepage URL:** `https://funnelfountain.com`
+3. **Authorization callback URL:** `https://funnelfountain.com/auth/callback`
+4. Save. Copy the **Client ID**, then **Generate a new client secret** and copy that too.
+
+### 9c. Cloudflare environment variables
+
+In **Pages project → Settings → Environment variables**, add for **Production** (and **Preview** if you want CMS to work on preview deploys):
+
+| Name                  | Value                          | Type      |
+| --------------------- | ------------------------------ | --------- |
+| `GITHUB_CLIENT_ID`    | from step 9b                   | Plaintext |
+| `GITHUB_CLIENT_SECRET`| from step 9b                   | Encrypted |
+
+Trigger a redeploy so the function picks them up.
+
+### 9d. How the auth flow works
+
+1. User visits `/admin/` and clicks **Login with GitHub**.
+2. Sveltia opens a popup to `https://funnelfountain.com/auth/callback?provider=github&...` (the `auth_endpoint` from `admin/config.yml`).
+3. The Pages Function ([functions/auth/[[callback]].js](functions/auth/%5B%5Bcallback%5D%5D.js)) sees no `?code=`, builds the GitHub authorize URL using `GITHUB_CLIENT_ID`, and redirects.
+4. GitHub authenticates the user and redirects back to `/auth/callback?code=...`.
+5. The function exchanges the code for an access token using `GITHUB_CLIENT_SECRET`, then returns a tiny HTML page that `postMessage`s the token to the CMS popup opener using the standard `authorization:github:success:{...}` handshake.
+6. Sveltia stores the token, closes the popup, and uses it to read/write the GitHub repo directly.
+
+No third-party service involved. No Netlify. No git-gateway.
+
+### 9e. Switching to a different repo / branch
+
+Edit [admin/config.yml](admin/config.yml) `backend.repo` and `backend.branch`. If you change the production domain, also update `backend.base_url`, the GitHub OAuth App's homepage and callback URLs, and every `<loc>` in `sitemap.xml`.
 
 ---
 
@@ -214,18 +254,28 @@ These class patterns are already styled and animation-ready. Drop them into any 
 
 ---
 
-## 11. Things to wire up before going live
+## 11. SEO
 
-- [ ] Replace every `[BRACKETED_PLACEHOLDER]` with real copy.
-- [ ] Drop a 1200×630 OG image at `assets/images/og-image.jpg` and update OG meta tags' canonical URLs.
-- [ ] Replace `[FORMSPREE_ENDPOINT_PLACEHOLDER]` in `contact.html` with your real Formspree (or alternative) endpoint.
-- [ ] Insert your Calendly / Cal.com embed where the comment marker is (`<!-- INSERT CALENDLY OR CAL.COM EMBED HERE -->`) inside `#booking-calendar`.
-- [ ] Replace `[SOCIAL_*_URL]` placeholders with real social URLs (search `[SOCIAL_` in `main.js`).
-- [ ] Configure CMS auth (see §9.3).
-- [ ] Add `robots.txt` and `sitemap.xml` (Phase 4).
+- [robots.txt](robots.txt) — allows all crawlers, disallows `/admin/`, `/functions/`, `/content/`. Points to the sitemap.
+- [sitemap.xml](sitemap.xml) — all 8 public pages with `<lastmod>`, `<changefreq>`, `<priority>`. Update `<lastmod>` whenever you publish substantive copy changes, and add a `<url>` entry whenever you add a page.
+- Each page has its own `<title>`, `<meta name="description">`, canonical link, and OG tags. These currently use `[BRACKETED_PLACEHOLDER]` content — replace before launch.
+
+After deploy, submit `https://funnelfountain.com/sitemap.xml` to Google Search Console and Bing Webmaster Tools.
 
 ---
 
-## 12. License
+## 12. Things to wire up before going live
+
+- [ ] Replace every `[BRACKETED_PLACEHOLDER]` with real copy (titles, descriptions, OG tags, body copy, FAQs).
+- [ ] Drop a 1200×630 OG image at `Assets/images/og-image.jpg` and update OG meta tags' canonical URLs.
+- [ ] Replace `[FORMSPREE_ENDPOINT_PLACEHOLDER]` in `contact.html` with your real Formspree endpoint.
+- [ ] Insert your Calendly / Cal.com embed where the comment marker is (`<!-- INSERT CALENDLY OR CAL.COM EMBED HERE -->`) inside `#booking-calendar`.
+- [ ] Replace `[SOCIAL_*_URL]` placeholders with real social URLs (search `[SOCIAL_` in `main.js`).
+- [ ] Configure CMS auth (see §9b–9c).
+- [ ] Submit sitemap to Google Search Console + Bing Webmaster Tools.
+
+---
+
+## 13. License
 
 Proprietary — © FunnelFountain.

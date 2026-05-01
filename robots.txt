@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /functions/
+Disallow: /content/
+
+Sitemap: https://funnelfountain.com/sitemap.xml
