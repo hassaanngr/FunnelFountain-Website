@@ -6,29 +6,17 @@
   <meta name="robots" content="noindex" />
   <title>Content Manager — FunnelFountain</title>
   <link rel="icon" type="image/png" href="../Assets/FunneFountainMonogram%20Transparent.png" />
-
-  <!--
-    Netlify Identity widget.
-    Required for git-gateway authentication when deploying via Netlify.
-    If you self-host auth (e.g. GitHub OAuth), you can remove this block
-    and add the relevant config to config.yml under `backend`.
-  -->
-  <script>
-  window.netlifyIdentityUrl = "https://silly-conkies-c7885a.netlify.app";
-  </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Decap CMS app loader -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
   <script>
-    // After login, redirect back to the admin page (avoids landing on the home URL).
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', function (user) {
+      window.netlifyIdentity.on("init", user => {
         if (!user) {
-          window.netlifyIdentity.on('login', function () {
-            document.location.href = '/admin/';
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
           });
         }
       });
