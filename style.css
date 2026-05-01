@@ -246,13 +246,13 @@ p { margin: 0 0 var(--s-4); color: var(--color-muted); }
 }
 
 .site-header__logo img {
-  height: 56px;
+  height: 45px;
   width: auto;
   display: block;
   transition: height .3s var(--ease);
 }
 .site-header.is-scrolled .site-header__logo img {
-  height: 48px;
+  height: 40px;
 }
 @media (max-width: 720px) {
   .site-header__logo img { height: 44px; }
@@ -946,6 +946,171 @@ p { margin: 0 0 var(--s-4); color: var(--color-muted); }
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   Phase 3 polish — loader, light section, smoother motion,
+   bigger trust logos, refined dropdown
+   ========================================================= */
+
+/* ----- Page loader ----- */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--color-bg);
+  display: grid;
+  place-items: center;
+  transition: opacity .55s var(--ease), visibility .55s linear;
+}
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.page-loader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-6);
+  animation: loader-fade-in .6s var(--ease);
+}
+.page-loader__logo {
+  height: 56px;
+  width: auto;
+  opacity: 0.95;
+  animation: loader-pulse 1.6s ease-in-out infinite;
+}
+.page-loader__bar {
+  width: 140px;
+  height: 2px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.page-loader__bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  border-radius: inherit;
+  animation: loader-sweep 1.2s ease-in-out infinite;
+}
+@keyframes loader-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes loader-pulse {
+  0%, 100% { opacity: 0.85; }
+  50%      { opacity: 1; }
+}
+@keyframes loader-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+/* ----- Smoother transitions ----- */
+.btn { transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .35s var(--ease), border-color .25s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn--gold:hover { box-shadow: 0 12px 32px rgba(254,217,7,0.32); }
+.btn--outline:hover { box-shadow: 0 8px 22px rgba(254,217,7,0.10); }
+
+.glass { transition: transform .45s var(--ease), border-color .35s var(--ease), background .35s var(--ease), box-shadow .45s var(--ease); }
+.glass:hover {
+  transform: translateY(-6px);
+  border-color: var(--glass-border-gold);
+  background: var(--glass-bg-strong);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(254,217,7,0.05);
+}
+
+.service-card__link::after { transition: transform .3s var(--ease); }
+.service-card__link:hover::after { transform: translateX(6px); }
+
+/* Smoother dropdown */
+.dropdown {
+  transform: translate(-50%, -6px) scale(.98);
+  transform-origin: top center;
+  transition: opacity .28s var(--ease), transform .35s var(--ease), visibility .28s linear;
+}
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+  transform: translate(-50%, 0) scale(1);
+}
+.dropdown a { transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease); }
+.dropdown a:hover { transform: translateX(2px); }
+.dropdown__icon { transition: transform .25s var(--ease), background .25s var(--ease); }
+.dropdown a:hover .dropdown__icon { transform: rotate(-4deg) scale(1.06); }
+
+/* ----- Trust logos (wider, fit text) ----- */
+.trust__logos {
+  gap: var(--s-12);
+  row-gap: var(--s-6);
+}
+.trust__logos svg {
+  height: 32px;
+  width: auto;
+  max-width: 200px;
+  fill: var(--color-white);
+  opacity: 0.55;
+  transition: opacity .25s var(--ease), fill .25s var(--ease);
+}
+.trust__logos svg:hover { opacity: 1; fill: var(--color-gold); }
+
+/* ----- Light section variant ----- */
+.section--light {
+  background: var(--color-white);
+  color: #0a0a0a;
+  position: relative;
+}
+.section--light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.section--light > * { position: relative; z-index: 1; }
+.section--light .eyebrow { color: #b88f00; }
+.section--light h2,
+.section--light h3,
+.section--light h4 { color: #0a0a0a; }
+.section--light p { color: #444; }
+.section--light .glass {
+  background: rgba(255,255,255,0.6);
+  border-color: rgba(0,0,0,0.06);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 12px 30px rgba(0,0,0,0.06);
+}
+.section--light .glass:hover {
+  border-color: rgba(254,217,7,0.55);
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+}
+.section--light .why-card__icon,
+.section--light .value-card__icon,
+.section--light .feature-card__icon,
+.section--light .service-card__icon {
+  background: rgba(254,217,7,0.18);
+  border-color: rgba(184,143,0,0.35);
+  color: #8a6b00;
+}
+.section--light .step__num {
+  background: #fff;
+  border-color: rgba(184,143,0,0.4);
+  color: #8a6b00;
+}
+.section--light .step__num::after { border-color: rgba(184,143,0,0.25); }
+.section--light .process__steps::before {
+  background: linear-gradient(to right, transparent, rgba(184,143,0,0.45), transparent);
+}
+
+/* ----- Header logo edge case: prevent flicker before JS ----- */
+.site-header__logo img { background: transparent; }
 
 /* =========================================================
    Mobile refinements (Phase 2)

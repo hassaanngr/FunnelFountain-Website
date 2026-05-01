@@ -254,9 +254,38 @@
     els.forEach(el => obs.observe(el));
   }
 
+  /* ---------- Page loader ---------- */
+  function buildLoader() {
+    const logoSrc = asset('Assets/FunnelFountain White Text Logo Transparent.png').replace(/ /g, '%20');
+    const html = `
+      <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="page-loader__inner">
+          <img class="page-loader__logo" src="${logoSrc}" alt="" />
+          <div class="page-loader__bar" role="presentation"></div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('afterbegin', html);
+  }
+  function dismissLoader() {
+    const loader = document.getElementById('pageLoader');
+    if (!loader) return;
+    // Wait for fonts + a tick so first paint of hero is settled
+    const hide = () => {
+      requestAnimationFrame(() => loader.classList.add('is-hidden'));
+      setTimeout(() => loader.remove(), 800);
+    };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => setTimeout(hide, 250));
+    } else {
+      setTimeout(hide, 450);
+    }
+  }
+
   /* ---------- Bootstrap ---------- */
   function init() {
     const active = document.body.dataset.page || '';
+    buildLoader();
     buildHeader(active);
     buildFooter();
     buildMobileCTA();
@@ -264,6 +293,8 @@
     initMobileMenu();
     initCounters();
     initReveal();
+    if (document.readyState === 'complete') dismissLoader();
+    else window.addEventListener('load', dismissLoader, { once: true });
   }
 
   if (document.readyState === 'loading') {
