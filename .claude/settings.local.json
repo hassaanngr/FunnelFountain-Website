@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"\\(Get-Content 'd:\\\\FunnelFountain Website\\\\google-ads.html'\\) -replace '<body data-page=\\\\\"services\\\\\" data-depth=\\\\\"0\\\\\">', '<body data-page=\\\\\"services\\\\\" data-slug=\\\\\"google-ads\\\\\" data-depth=\\\\\"0\\\\\">' | Set-Content 'd:\\\\FunnelFountain Website\\\\google-ads.html' -Encoding utf8\")",
+      "Bash(powershell -Command \"\\(Get-Content 'd:\\\\FunnelFountain Website\\\\meta-ads.html'\\) -replace '<body data-page=\\\\\"services\\\\\" data-depth=\\\\\"0\\\\\">', '<body data-page=\\\\\"services\\\\\" data-slug=\\\\\"meta-ads\\\\\" data-depth=\\\\\"0\\\\\">' | Set-Content 'd:\\\\FunnelFountain Website\\\\meta-ads.html' -Encoding utf8\")"
+    ]
+  }
+}
