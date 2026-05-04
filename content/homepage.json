@@ -13,13 +13,13 @@
       "number": "94",
       "prefix": "",
       "suffix": "%",
-      "label": "[STAT_2_LABEL: CLIENT RETENTION]"
+      "label": "CLIENT RETENTION"
     },
     {
       "number": "2",
       "prefix": "$",
       "suffix": "M+",
-      "label": "[STAT_3_LABEL: AD SPEND MANAGED]"
+      "label": "AD SPEND MANAGED"
     }
   ],
   "why_headline": "WHY FUNNELFOUNTAIN",
