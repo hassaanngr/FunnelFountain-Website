@@ -1,7 +1,6 @@
 {
-  "page_headline": "[SERVICES_PAGE_HEADLINE: INSERT MAIN HEADLINE FOR SERVICES OVERVIEW PAGE]",
+  "page_headline": "MAIN HEADLINE TEST",
   "page_subheadline": "[SERVICES_PAGE_SUB: INSERT 1-2 SENTENCE INTRO EXPLAINING THE SCOPE OF SERVICES OFFERED]",
-
   "services": [
     {
       "slug": "google-ads",
