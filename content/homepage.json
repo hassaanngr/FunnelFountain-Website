@@ -1,5 +1,5 @@
 {
-  "hero_eyebrow": "PERFORMANCE MARKETING AGENCY (TEST)",
+  "hero_eyebrow": "PERFORMANCE MARKETING AGENCY",
   "hero_headline": "Stop Guessing. Start Growing. Real Revenue, Built on Real Data.",
   "hero_subheadline": "FunnelFountain is a performance-first digital marketing agency that turns clicks into customers and ad spend into profit. From Google Ads and Meta Ads to SEO and full-funnel strategy — we build marketing systems that scale.",
   "stats": [
@@ -40,19 +40,19 @@
   ],
   "testimonials": [
     {
-      "quote": "[TESTIMONIAL_1_QUOTE: INSERT CLIENT QUOTE — 2-3 SENTENCES ABOUT RESULTS OR EXPERIENCE]",
-      "name": "[TESTIMONIAL_1_NAME]",
-      "role": "[TESTIMONIAL_1_ROLE_AND_COMPANY]"
+      "quote": "\"Our Google Ads were generating clicks but zero sales. FunnelFountain doubled our conversion rate — and leads keep coming in every day.\"",
+      "name": "name",
+      "role": "— E-Commerce Founder, USA"
     },
     {
-      "quote": "[TESTIMONIAL_2_QUOTE: INSERT CLIENT QUOTE — 2-3 SENTENCES ABOUT RESULTS OR EXPERIENCE]",
-      "name": "[TESTIMONIAL_2_NAME]",
-      "role": "[TESTIMONIAL_2_ROLE_AND_COMPANY]"
+      "quote": "\"We boosted posts on Instagram for months with no return. FunnelFountain's Meta Ads strategy gave us a 4.8x ROAS in just 30 days.\"",
+      "name": "name",
+      "role": "— D2C Brand Owner"
     },
     {
-      "quote": "[TESTIMONIAL_3_QUOTE: INSERT CLIENT QUOTE — 2-3 SENTENCES ABOUT RESULTS OR EXPERIENCE]",
-      "name": "[TESTIMONIAL_3_NAME]",
-      "role": "[TESTIMONIAL_3_ROLE_AND_COMPANY]"
+      "quote": "\"Our Shopify store was stuck at 5–10 orders a day. With FunnelFountain's Meta Ads, we're now doing 50+ daily orders — profitably.\"\n— Shopify Store Owner",
+      "name": "name",
+      "role": "— Shopify Store Owner"
     }
   ],
   "cta_headline": "[CTA_BANNER_HEADLINE: INSERT POWERFUL CTA HEADLINE — E.G. LET'S BUILD YOUR GROWTH ENGINE]",
