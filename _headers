@@ -8,8 +8,10 @@
 /Assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+# CSS/JS revalidate on every load (cheap 304s via ETag) so design
+# changes appear immediately after deploy instead of being cached 24h.
 /style.css
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=0, must-revalidate
 
 /main.js
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=0, must-revalidate
