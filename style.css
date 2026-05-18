@@ -137,10 +137,10 @@ p { margin: 0 0 var(--s-4); color: var(--color-muted); }
 }
 
 .section {
-  padding: var(--s-24) 0;
+  padding: var(--s-20) 0;
 }
 
-.section--tight { padding: var(--s-16) 0; }
+.section--tight { padding: var(--s-12) 0; }
 
 .eyebrow {
   display: inline-block;
@@ -1123,16 +1123,22 @@ p { margin: 0 0 var(--s-4); color: var(--color-muted); }
 .section--light .benefit-list li { color: #1a1a1a; }
 
 /* FAQ accordion on light sections */
-.section--light .faq-item {
-  background: rgba(255,255,255,0.6);
-  border-color: rgba(0,0,0,0.08);
+.section--light .faq .faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 8px 22px rgba(0,0,0,0.06);
 }
-.section--light .faq-item[open] {
-  background: #fff;
+.section--light .faq .faq-item[open] {
+  background: #ffffff;
+  border-color: rgba(184,143,0,0.55);
+  box-shadow: 0 10px 28px rgba(184,143,0,0.14);
+}
+.section--light .faq .faq-item summary { color: #0a0a0a; }
+.section--light .faq .faq-item summary::after {
+  background: rgba(254,217,7,0.20);
   border-color: rgba(184,143,0,0.45);
 }
-.section--light .faq-item summary { color: #0a0a0a; }
-.section--light .faq-item__body { color: #555; }
+.section--light .faq .faq-item__body { color: #555; }
 .section--light .faq-group__title { color: #8a6b00; }
 
 /* Stats on light sections */
@@ -1149,8 +1155,8 @@ p { margin: 0 0 var(--s-4); color: var(--color-muted); }
 
 @media (max-width: 720px) {
   .container { padding-inline: var(--s-4); }
-  .section { padding: var(--s-16) 0; }
-  .section--tight { padding: var(--s-10) 0; }
+  .section { padding: var(--s-12) 0; }
+  .section--tight { padding: var(--s-8) 0; }
   .section-head { margin-bottom: var(--s-8); }
   .glass { padding: var(--s-6); }
   .hero { padding: 110px 0 var(--s-12); }
