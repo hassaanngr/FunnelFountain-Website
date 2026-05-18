@@ -1109,6 +1109,37 @@ p { margin: 0 0 var(--s-4); color: var(--color-muted); }
   background: linear-gradient(to right, transparent, rgba(184,143,0,0.45), transparent);
 }
 
+/* Testimonials on light sections */
+.section--light .testimonial__quote { color: #1a1a1a; }
+.section--light .testimonial__name { color: #0a0a0a; }
+.section--light .testimonial__role { color: #666; }
+.section--light .testimonial__avatar {
+  background: linear-gradient(135deg, #f4f4f4, #e4e4e4);
+  border-color: rgba(0,0,0,0.08);
+  color: #8a6b00;
+}
+
+/* Benefit list on light sections */
+.section--light .benefit-list li { color: #1a1a1a; }
+
+/* FAQ accordion on light sections */
+.section--light .faq-item {
+  background: rgba(255,255,255,0.6);
+  border-color: rgba(0,0,0,0.08);
+}
+.section--light .faq-item[open] {
+  background: #fff;
+  border-color: rgba(184,143,0,0.45);
+}
+.section--light .faq-item summary { color: #0a0a0a; }
+.section--light .faq-item__body { color: #555; }
+.section--light .faq-group__title { color: #8a6b00; }
+
+/* Stats on light sections */
+.section--light .stat__num { color: #0a0a0a; }
+.section--light .stat__label { color: #555; }
+.section--light .service-card__link { color: #8a6b00; }
+
 /* ----- Header logo edge case: prevent flicker before JS ----- */
 .site-header__logo img { background: transparent; }
 
